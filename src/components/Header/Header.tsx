@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "../../assets/image.png";
 function Header() {
   return (
@@ -11,11 +12,21 @@ function Header() {
           </span>
         </div>
         <ul className="flex gap-16 items-center text-sm text-gray-800 cursor-pointer">
-          <li>HOME</li>
-          <li>ABOUT</li>
-          <li>SERVICES</li>
-          <li>CAREERS</li>
-          <li>CONTACT</li>
+          <Link to="/">
+            <li>HOME</li>
+          </Link>
+          <Link to={"/about"}>
+            <li>ABOUT</li>
+          </Link>
+          <Link to={"/services"}>
+            <li>SERVICES</li>
+          </Link>
+          <Link to={"/careers"}>
+            <li>CAREERS</li>
+          </Link>
+          <Link to={"/contact"}>
+            <li>CONTACT</li>
+          </Link>
         </ul>
       </div>
     </>
