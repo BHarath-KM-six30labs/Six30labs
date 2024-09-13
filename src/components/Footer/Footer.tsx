@@ -4,13 +4,13 @@ import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 function Footer() {
   return (
-    <footer className="fixed bottom-0 w-full">
-      <div className="flex items-center bg-black opacity-90 justify-center h-full text-white">
+    <footer className="w-full">
+      <div className="flex items-center  justify-center h-full ">
         footer
       </div>
       <div
-        className="bg-black
-      flex items-center justify-between  p-5 px-32 text-white"
+        className="bg-gray-100
+      flex items-center justify-between  p-5 px-32 "
       >
         <span className="text-sm">
           All rights reserved | © 2024 Six30 Labs Pvt. Ltd.
