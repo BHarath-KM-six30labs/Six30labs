@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import logo from "../../assets/image.png";
+import logo from "../../assets/Logo.png";
 function Header() {
   return (
     <>
-      <div className="flex justify-between px-[150px] py-2 border">
+      <div className="flex justify-between px-24 py-2 ">
         <div className="flex items-center gap-3">
           <img src={logo} alt="six30labs-Logo" className="w-[60px]" />
           <span className="flex flex-col ">
@@ -11,7 +11,7 @@ function Header() {
             <span className="text-[#03B7C9] text-sm">CODE. EAT. REPEAT.</span>
           </span>
         </div>
-        <ul className="flex gap-16 items-center text-sm text-gray-800 cursor-pointer">
+        <ul className="flex gap-10 items-center text-sm text-gray-800 cursor-pointer">
           <Link to="/">
             <li>HOME</li>
           </Link>
