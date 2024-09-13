@@ -10,11 +10,11 @@ function Home() {
     <>
       <div className="flex ">
         <div className="flex flex-1 flex-col  ml-24 ">
-          <span className="leading-10  mt-20">
-            <span className="text-5xl">
+          <span className="leading-10 text-4xl font-bold mt-20">
+            <span className="">
               ENGINEERING <br />
             </span>
-            <span className="text-4xl">
+            <span className="">
               INNOVATION AND DESIGNING THE FUTURE
             </span>
             <br />
