@@ -5,22 +5,22 @@ const ProcessSection: React.FC = () => {
   return (
     <div className="flex">
       <div className="flex flex-1 justify-center items-center">
-        <img src={process} alt="process" className="w-16 h-16" /> {/* Adjusted image size */}
+        <img src={process} alt="process" className="w-16 h-16" /> 
       </div>
       <div className="flex flex-1">
         <div className="relative w-full md:w-1/2">
-          <h2 className="text-2xl font-bold mb-4">Our Process</h2> {/* Reduced heading size */}
-          <ul className="list-none space-y-8"> {/* Reduced spacing between list items */}
-            <li className="relative pl-10"> {/* Adjusted padding */}
-              <h4 className="text-lg font-semibold text-[#41ba8e]">Idea</h4> {/* Reduced heading size */}
-              <p className="mt-1 text-gray-700 text-xs"> {/* Reduced font size */}
+          <h2 className="text-2xl font-bold mb-4">Our Process</h2> 
+          <ul className="list-none space-y-8"> 
+            <li className="relative pl-10"> 
+              <h4 className="text-lg font-semibold text-[#41ba8e]">Idea</h4> 
+              <p className="mt-1 text-gray-700 text-xs"> 
                 Analyze requirement through in-depth research with the help of
                 brilliant tools.
               </p>
-              <span className="absolute left-0 top-0 w-5 h-5 bg-[#41ba8e] text-white flex items-center justify-center rounded-full"> {/* Adjusted size */}
-                <span className="text-xs">1</span> {/* Reduced font size */}
+              <span className="absolute left-0 top-0 w-5 h-5 bg-[#41ba8e] text-white flex items-center justify-center rounded-full"> 
+                <span className="text-xs">1</span> 
               </span>
-              <div className="absolute left-2 top-1/2 w-0.5 h-full bg-gray-300"></div> {/* Adjusted position and size */}
+              <div className="absolute left-2 top-1/2 w-0.5 h-full bg-gray-300"></div> 
             </li>
             <li className="relative pl-10">
               <h4 className="text-lg font-semibold text-[#ba5741]">Sketch</h4>
