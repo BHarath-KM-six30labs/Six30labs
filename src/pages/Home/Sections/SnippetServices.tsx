@@ -1,6 +1,6 @@
 function SnippetServices() {
     return (
-      <div className="mt-8 bg-[#41B98C] text-white py-5">
+      <div className=" bg-[#41B98C] text-white py-5">
         <div className="flex justify-center items-center gap-6">
           <span className="flex items-center gap-2">
             <hr className="w-8 border-white" />

@@ -1,4 +1,5 @@
 import cube from "../../assets/cube.png";
+import Carousel from "./Sections/Carousel";
 import Experiecnce from "./Sections/Experiecnce";
 import KnowMore from "./Sections/KnowMore";
 import Portfolio from "./Sections/Portfolio";
@@ -40,10 +41,19 @@ function Home() {
       <>
         <KnowMore />
       </>
-      <>
+      {/* <>
         <SnippetServices />
+      </> */}
+      <>
+        <div className="flex justify-center items-center gap-6 mt-10">
+          <span className="flex items-center gap-2">
+            <hr className="w-8 border-[#41B98C]" />
+            <span className="text-sm text-[#41B98C]">TESTIMONIAL</span>
+            <hr className="w-8 border-[#41B98C]" />
+          </span>
+        </div>
+        <Carousel />
       </>
-     
     </>
   );
 }

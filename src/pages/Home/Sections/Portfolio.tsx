@@ -1,3 +1,4 @@
+import Button from "../../../components/Button/Button";
 import Card from "../../../components/Card/Card";
 import { data } from "./Data-sets/Portfolio";
 import { accelerators } from "./Data-sets/accelerators";
@@ -19,7 +20,7 @@ function Portfolio() {
           ))}
         </div>
         <div className="py-10 ">
-          <button className="border border-black px-3 py-2">Learn More</button>
+          <Button text={'Learn More'}/>
         </div>
       </div>
     </div>
