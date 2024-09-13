@@ -1,5 +1,6 @@
 import cube from "../../assets/cube.png";
 import Experiecnce from "./Sections/Experiecnce";
+import KnowMore from "./Sections/KnowMore";
 import Portfolio from "./Sections/Portfolio";
 import SnippetServices from "./Sections/SnippetServices";
 
@@ -37,8 +38,12 @@ function Home() {
         <Portfolio />
       </>
       <>
+        <KnowMore />
+      </>
+      <>
         <SnippetServices />
       </>
+     
     </>
   );
 }
