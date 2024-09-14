@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import Layout from './Layout/Layout'
 import Home from './pages/Home/Home'
@@ -61,7 +60,7 @@ const router = createBrowserRouter([
   },
 ]);
 function App() {
-  const [count, setCount] = useState(0)
+  
 
 
 

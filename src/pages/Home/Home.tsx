@@ -3,7 +3,7 @@ import Carousel from "./Sections/Carousel";
 import Experiecnce from "./Sections/Experiecnce";
 import KnowMore from "./Sections/KnowMore";
 import Portfolio from "./Sections/Portfolio";
-import SnippetServices from "./Sections/SnippetServices";
+// import SnippetServices from "./Sections/SnippetServices";
 
 function Home() {
   return (
