@@ -49,11 +49,7 @@ function Header() {
               {" "}
               <span>services</span>
             </Link>
-            {(location.pathname === "/services" ||
-              location.pathname === "/software_development" ||
-              location.pathname === "/design&development" ||
-              location.pathname === "/others" ||
-              location.pathname === "/digital_marketing") && (
+            {location.pathname === "/services" && (
               <>
                 {isDropdownOpen && (
                   <ul
@@ -61,12 +57,12 @@ function Header() {
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                   >
-                    <Link to="/software_development">
+                    <Link to="/services/service1">
                       <li className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
                         Software Development
                       </li>
                     </Link>
-                    <Link to="/design&development">
+                    <Link to="/services/service2">
                       <li className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
                         Design &amp; Development
                       </li>
@@ -76,12 +72,12 @@ function Header() {
                         Training &amp; Development
                       </li>
                     </a>
-                    <Link to="/digital_marketing">
+                    <Link to="/services/service3">
                       <li className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
                         Digital Marketing
                       </li>
                     </Link>
-                    <Link to="/others">
+                    <Link to="/services/service3">
                       <li className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
                         Others
                       </li>

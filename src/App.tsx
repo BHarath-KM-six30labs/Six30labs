@@ -7,6 +7,10 @@ import About from './pages/About/About'
 import Service from './pages/Services/Service'
 import Careers from './pages/Careers/Careers'
 import Contacts from './pages/Contacts/Contacts'
+import DegitalMarketing from './pages/Services/Sections/DegitalMarketing'
+import DesignAndDevelopment from './pages/Services/Sections/DesignAndDevelopment'
+import SoftwareDevelopMent from './pages/Services/Sections/SoftwareDevelopMent'
+import Others from './pages/Services/Sections/Others'
 
 
 const router = createBrowserRouter([
@@ -36,6 +40,22 @@ const router = createBrowserRouter([
       {
         path: "contact",
         element:<Contacts/>
+      },
+      {
+        path: "digital_marketing",
+        element:<DegitalMarketing/>
+      },
+      {
+        path: "design&development",
+        element:<DesignAndDevelopment/>
+      },
+      {
+        path: "software_development",
+        element:<SoftwareDevelopMent/>
+      },
+      {
+        path: "others",
+        element:<Others/>
       }
     ],
   },
