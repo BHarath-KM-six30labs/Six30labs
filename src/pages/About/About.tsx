@@ -34,6 +34,7 @@ function About() {
       <AboutSection />
       <Locations />
       <History />
+      <h2 className="text-3xl mt-8 ml-24 font-bold mb-6">Our Process</h2>
       <ProcessSection />
     </>
   );
