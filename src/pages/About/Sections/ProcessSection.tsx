@@ -1,5 +1,5 @@
 import React from "react";
-import process from "../../assets/About/process-ver2.png";
+import process from "../../../assets/About/process-ver2.png";
 
 const ProcessSection: React.FC = () => {
   return (

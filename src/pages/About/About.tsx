@@ -1,9 +1,10 @@
 import about from "../../assets/About/about_Empo_2e8775b503.png";
 import Locations from "../../components/Locations/Locations";
 import Experiecnce from "../Home/Sections/Experiecnce";
-import AboutSection from "./AboutSection";
-import History from "./History";
-import ProcessSection from "./ProcessSection";
+import AboutSection from "./Sections/AboutSection";
+import Approach from "./Sections/Approach";
+import History from "./Sections/History";
+import ProcessSection from "./Sections/ProcessSection";
 
 function About() {
   return (
@@ -36,6 +37,7 @@ function About() {
       <History />
       <h2 className="text-3xl mt-8 ml-24 font-bold mb-6">Our Process</h2>
       <ProcessSection />
+      <Approach/>
     </>
   );
 }
