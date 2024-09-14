@@ -6,7 +6,7 @@ import { accelerators } from "./Data-sets/accelerators";
 function Portfolio() {
   return (
     <div className="mt-8 bg-[#ededed] ">
-      <div className="px-24 py-10">
+      <div className="px-32 py-10">
         <span className="text-2xl font-semibold">PORTFOLIO</span>
         <div className="grid grid-cols-3 gap-6 mt-8">
           {data.map((project, index) => (

@@ -44,11 +44,11 @@ const Locations: React.FC = () => {
         {locations.map((location, index) => (
           <div
             key={index}
-            className="flex flex-col bg-white shadow-lg border justify-center items-center rounded-lg p-4 max-w-64 h-[200px] transition transform ease-in-out hover:scale-105"
+            className="flex flex-col bg-white shadow-lg border justify-center items-center rounded-lg p-4 max-w-64 min-h-[200px] transition transform ease-in-out hover:scale-105"
           >
             <CiLocationOn className="text-3xl mb-2 text-[#41B98C]" />
-            <h3 className="font-semibold mb-2">{location.city}</h3>
-            <p className="text-gray-600 flex-1 text-[13px] mb-4 text-center">
+            <h3 className="font-semibold mb-2 text-xl">{location.city}</h3>
+            <p className="text-gray-600 flex-1 text-sm mb-4 text-center">
               {location.address}
             </p>
             <a

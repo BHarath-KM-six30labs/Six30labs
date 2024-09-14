@@ -22,7 +22,7 @@ const Card: React.FC<CardProps> = ({ project, show }) => {
         className="w-full h-40 object-cover mb-4 rounded"
       />
       <h3 className="font-bold mb-2">{project.name}</h3>
-      <p className="text-[12px] font-semibold">{project.description}</p>
+      <p className="text-[13px] font-semibold">{project.description}</p>
       {show && (
         <p className="mt-2 text-[11px] text-gray-600">{project.details}</p>
       )}

@@ -9,17 +9,17 @@ function Home() {
   return (
     <>
       <div className="flex ">
-        <div className="flex flex-1 flex-col  ml-24 ">
-          <span className="leading-10 text-4xl font-bold mt-20">
-            <span className="">
+        <div className="flex flex-1 flex-col  ml-32 ">
+          <span className="  mt-[80px] leading-[45px]">
+            <span className="font-bold text-7xl">
               ENGINEERING <br />
             </span>
-            <span className="">
+            <span className="text-5xl font-semibold">
               INNOVATION AND DESIGNING THE FUTURE
             </span>
             <br />
           </span>
-          <span className="text-sm leading-6 mt-5 tracking-wide">
+          <span className=" leading-8 mt-5 tracking-wide">
             In a fast-changing tech world, Six30 Labs (formerly Aspelec
             Technologies), founded in 2011, delivers innovative, high-quality
             software solutions. Our global team specializes in mobile
@@ -28,7 +28,7 @@ function Home() {
             design-centric thinking, and excellence to drive success and growth.
           </span>
         </div>
-        <div className="flex flex-1 items-center ">
+        <div className="flex flex-1 items-center ml-20 mt-20 ">
           <img src={cube} alt="" className="w-[26rem] h-[26rem]" />
         </div>
       </div>
@@ -48,7 +48,7 @@ function Home() {
         <div className="flex justify-center items-center gap-6 ">
           <span className="flex items-center gap-2">
             <hr className="w-8 border-[#41B98C]" />
-            <span className="text-sm text-[#41B98C]">TESTIMONIAL</span>
+            <span className=" text-[#41B98C]">TESTIMONIAL</span>
             <hr className="w-8 border-[#41B98C]" />
           </span>
         </div>

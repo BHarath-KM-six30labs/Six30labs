@@ -13,7 +13,7 @@ function Carousel() {
           id="item1"
           className="carousel-item w-full text-center flex flex-col items-center"
         >
-          <p className="px-4 md:px-20 lg:px-52 text-sm">
+          <p className="px-4 md:px-20 lg:px-52 ">
             Your team's ideas, responsiveness, and support have been far beyond
             industry norms and our expectations. The new module has benefited us
             by streamlining business development activities of our company on a

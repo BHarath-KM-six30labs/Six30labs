@@ -3,13 +3,13 @@ import Button from "../../../components/Button/Button";
 
 function KnowMore() {
   return (
-    <div className="px-24 py-10 flex gap-10">
+    <div className="px-32 py-10 flex gap-10">
       <div className="flex flex-1 flex-col">
-        <h3 className="text-[18px] font-bold">
+        <h3 className="text-3xl font-semibold">
           Precision in Digital Mastery
           <br /> Aligning Technology with Purpose
         </h3>
-        <p className="text-[12px] mt-3">
+        <p className=" leading-7 mt-3">
           While the technologies driving our digital world are crucial, simply
           having technical skills isn’t enough. The real value comes from
           merging these technological capabilities with strong business

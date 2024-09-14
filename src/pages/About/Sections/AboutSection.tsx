@@ -9,8 +9,8 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ title, children }) => (
   <div className="bg-white p-6 rounded-lg shadow-md">
-    <h2 className="text-xl font-semibold mb-4 text-[#41B98C]">{title}</h2>
-    <p className="text-sm leading-6">{children}</p>
+    <h2 className="text-2xl font-semibold mb-4 text-[#41B98C]">{title}</h2>
+    <p className=" leading-7">{children}</p>
   </div>
 );
 
