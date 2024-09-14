@@ -45,7 +45,7 @@ function Home() {
         <SnippetServices />
       </> */}
       <>
-        <div className="flex justify-center items-center gap-6 mt-10">
+        <div className="flex justify-center items-center gap-6 ">
           <span className="flex items-center gap-2">
             <hr className="w-8 border-[#41B98C]" />
             <span className="text-sm text-[#41B98C]">TESTIMONIAL</span>
