@@ -1,6 +1,6 @@
 
 import DocumentMs from "../../../../assets/DocumentMS.png";
-import MedX from "../../../../assets/MedX.png";
+import MedX from "../../../../assets/medx.png";
 import EdTech from "../../../../assets/EdTech.png";
 import MIS from "../../../../assets/MIS.png";
 import Redit from "../../../../assets/Redit.png";
