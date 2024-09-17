@@ -10,7 +10,10 @@ import DigitalMarketing from "./pages/Services/Sections/DigitalMarketing";
 import DesignAndDevelopment from "./pages/Services/Sections/DesignAndDevelopment";
 import SoftwareDevelopMent from "./pages/Services/Sections/SoftwareDevelopMent";
 import Others from "./pages/Services/Sections/Others";
-import PortfolioLayout from "./components/Header/PortfolioHeader/PortfolioLayout";
+import Portfolio from "./pages/Home/Sections/Portfolio";
+import PortfolioLayout from "./Layout/PortfolioLayout";
+import Accelerators from "./pages/Home/Sections/Portfolio-subSection/Accelerators";
+import SubPortfolio from "./pages/Home/Sections/Portfolio-subSection/SubPortfolio";
 
 const router = createBrowserRouter([
   {
@@ -63,7 +66,15 @@ const router = createBrowserRouter([
           {
             path: "",
             index: true,
-            element: <PortfolioLayout />,
+            element: <SubPortfolio />,
+          },
+          {
+            path:"accelerators",
+            element:<Accelerators/>
+          },
+          {
+            path:"portfolio-others",
+            element:<Accelerators/>
           },
         ],
       },
