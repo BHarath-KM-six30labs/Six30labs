@@ -6,7 +6,7 @@ import About from './pages/About/About'
 import Service from './pages/Services/Service'
 import Careers from './pages/Careers/Careers'
 import Contacts from './pages/Contacts/Contacts'
-import DegitalMarketing from './pages/Services/Sections/DegitalMarketing'
+import DigitalMarketing from './pages/Services/Sections/DigitalMarketing'
 import DesignAndDevelopment from './pages/Services/Sections/DesignAndDevelopment'
 import SoftwareDevelopMent from './pages/Services/Sections/SoftwareDevelopMent'
 import Others from './pages/Services/Sections/Others'
@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       },
       {
         path: "digital_marketing",
-        element:<DegitalMarketing/>
+        element:<DigitalMarketing/>
       },
       {
         path: "design&development",

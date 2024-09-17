@@ -1,13 +1,14 @@
-import { servicesData } from "../Sections/Data-sets/software-dev";
+import { servicesData } from "../Sections/Data-sets/digitalMarketing";
 
-function SoftwareDevelopMent() {
+
+function DigitalMarketing() {
   return (
     <div className="bg-[#f7f7f7]  text-white py-5">
       <div className="flex justify-center items-center gap-6">
         <span className="flex items-center gap-2">
           <hr className="w-8 border-[#41B98C] " />
           <span className="text-sm uppercase text-[#41B98C] font-semibold">
-            Software Development
+            Degital Marketing
           </span>
           <hr className="w-8 border-[#41B98C] " />
         </span>
@@ -42,4 +43,4 @@ function SoftwareDevelopMent() {
   );
 }
 
-export default SoftwareDevelopMent;
+export default DigitalMarketing;
