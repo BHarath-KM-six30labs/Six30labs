@@ -1,4 +1,3 @@
-/* portfolio-header.css */
 .underline-animation::after {
     content: '';
     position: absolute;
@@ -16,12 +15,12 @@
   }
   
   .active::after {
-    width: 100%; /* Underline always visible for the active link */
-    transition: none; /* No animation for the active link */
+    width: 100%; 
+    transition: none; 
   }
   
   .active {
-    font-weight: bold; /* Optional: Highlight active item */
-    color: #41B98C; /* Optional: Change text color for active item */
+    font-weight: bold; 
+    color: #41B98C; 
   }
   
