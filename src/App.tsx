@@ -14,6 +14,7 @@ import Portfolio from "./pages/Home/Sections/Portfolio";
 import PortfolioLayout from "./Layout/PortfolioLayout";
 import Accelerators from "./pages/Home/Sections/Portfolio-subSection/Accelerators";
 import SubPortfolio from "./pages/Home/Sections/Portfolio-subSection/SubPortfolio";
+import PortfolioOthers from "./pages/Home/Sections/Portfolio-subSection/PortfolioOthers";
 
 const router = createBrowserRouter([
   {
@@ -74,7 +75,7 @@ const router = createBrowserRouter([
           },
           {
             path:"portfolio-others",
-            element:<Accelerators/>
+            element:<PortfolioOthers/>
           },
         ],
       },

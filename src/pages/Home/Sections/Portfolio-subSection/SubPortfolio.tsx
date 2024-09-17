@@ -9,14 +9,14 @@ function SubPortfolio() {
   }, []);
   return (
     <div className="mt-8 bg-[#ededed] ">
-      <div className="px-32 py-10">
+      <div className=" py-10 md:px-32 px-5">
         <span className="text-2xl font-semibold">PORTFOLIO</span>
-        <div className="grid grid-cols-3 gap-6 mt-8">
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-6 mt-8">
           {data.map((project, index) => (
             <Card key={index} project={project} show={true} />
           ))}
         </div>
-        <div className="grid grid-cols-3 gap-6 mt-8">
+        <div className="grid md:grid-cols-3 grid-cols-1 gap-6 mt-8">
           {accelerators.map((project, index) => (
             <Card key={index} project={project} show={true} />
           ))}
