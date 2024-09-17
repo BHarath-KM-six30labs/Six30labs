@@ -5,9 +5,9 @@ import { FaLinkedin } from "react-icons/fa";
 function Footer() {
   return (
     <footer className="w-full">
-      <div className="flex items-center  justify-center h-full ">
+      {/* <div className="flex items-center  justify-center h-full ">
         footer
-      </div>
+      </div> */}
       <div
         className="bg-gray-100
       flex items-center justify-between  p-5 px-32 "

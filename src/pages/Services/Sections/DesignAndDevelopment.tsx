@@ -1,4 +1,5 @@
-DegitalMarketing
+import { servicesData } from "../Sections/Data-sets/designAnddevelopment";
+
 
 function DesignAndDevelopment() {
   return (
