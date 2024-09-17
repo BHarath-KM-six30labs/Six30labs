@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../../../components/Button/Button";
 import Card from "../../../components/Card/Card";
 import { data } from "./Data-sets/Portfolio";
@@ -16,11 +17,13 @@ function Portfolio() {
         <h3 className="text-2xl font-semibold mt-10">ACCELERATORS</h3>
         <div className="grid grid-cols-3 gap-6 mt-8">
           {accelerators.map((project, index) => (
-            <Card key={index} project={project}  show={false}/>
+            <Card key={index} project={project} show={false} />
           ))}
         </div>
         <div className="py-10 ">
-          <Button text={'Learn More'}/>
+          <Link to="portfolio">
+            <Button text={"Learn More"} />
+          </Link>
         </div>
       </div>
     </div>
