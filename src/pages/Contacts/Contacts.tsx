@@ -1,6 +1,8 @@
 import Locations from "../../components/Locations/Locations";
 import map from "../../assets/contacts/map.png";
 import contact from "../../assets/Services/others/contact_14fde04a5f.png";
+import mail from "../../assets/contacts/mail.png";
+
 import { GoQuestion } from "react-icons/go";
 import { LuMailPlus } from "react-icons/lu";
 import ContactForm from "./sections/ContactForm";
@@ -74,8 +76,35 @@ function Contacts() {
             </a>
           </div>
         </div>
-        <div className="bg-[#f7f7f7] mt-8 mx-32 p-6 mb-6">
-          <ContactForm/>
+        <div className="bg-[#f7f7f7] mt-8 mx-4 md:mx-8 lg:mx-32 p-6 mb-6">
+          <div className="flex flex-col lg:flex-row lg:justify-between items-center">
+            <div className="flex-1 flex flex-col items-center text-center space-y-4 lg:items-start lg:text-left lg:space-y-6 lg:max-w-md lg:mx-auto">
+              <img
+                src={mail}
+                alt="Contact"
+                // className="w-24 h-24 lg:w-32 lg:h-32 object-cover"
+              />
+              <h2 className="text-2xl font-semibold">Get in Touch</h2>
+              <p className="text-gray-700">
+                We are easy to reach. Send a message to
+              </p>
+              <a
+                href="mailto:support@six30labs.io"
+                target="_blank"
+                className="bg-[#41B98C] tracking-wider text-white px-4 py-2 rounded text-xl  hover:bg-[#36a77c] transition duration-300"
+              >
+                hello@six30labs.io
+              </a>
+              <p className="text-gray-600 leading-7">
+                You can also reach out to us using the form on the right side.
+                Please make sure the email address you enter is correct.
+              </p>
+            </div>
+
+            <div className="flex-1 mt-6 lg:mt-0">
+              <ContactForm />
+            </div>
+          </div>
         </div>
       </div>
     </>
