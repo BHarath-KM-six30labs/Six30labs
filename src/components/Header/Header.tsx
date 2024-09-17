@@ -62,27 +62,27 @@ function Header() {
                     onMouseLeave={handleMouseLeave}
                   >
                     <Link to="/software_development">
-                      <li className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                      <li className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[12px]">
                         Software Development
                       </li>
                     </Link>
                     <Link to="/design&development">
-                      <li className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                      <li className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[12px]">
                         Design &amp; Development
                       </li>
                     </Link>
                     <a href="https://bloomlabs.in/">
-                      <li className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                      <li className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[12px]">
                         Training &amp; Development
                       </li>
                     </a>
                     <Link to="/digital_marketing">
-                      <li className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                      <li className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[12px]">
                         Digital Marketing
                       </li>
                     </Link>
                     <Link to="/others">
-                      <li className="block px-4 py-2 text-gray-800 hover:bg-gray-100">
+                      <li className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[12px]">
                         Others
                       </li>
                     </Link>
