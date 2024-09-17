@@ -94,6 +94,9 @@ function Header() {
           {/* <Link to="/careers">
             <li className="uppercase">careers</li>
           </Link> */}
+          <Link to="/portfolio">
+            <li className="uppercase">portfolio</li>
+          </Link>
           <Link to="/contact">
             <li className="uppercase">contact</li>
           </Link>
