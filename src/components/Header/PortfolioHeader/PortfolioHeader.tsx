@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import "./portfolio-header.css";
+import "../header.css";
 
 function PortfolioHeader() {
   const location = useLocation(); 

@@ -1,13 +1,14 @@
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/Logo.png";
 import { useState, useRef } from "react";
-
+import "./header.css";
 function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const timeoutRef = useRef<number | null>(null);
+
+  
   const location = useLocation();
-  console.log(location.pathname);
   const handleMouseEnter = () => {
     if (timeoutRef.current) {
       clearTimeout(timeoutRef.current);
@@ -35,13 +36,33 @@ function Header() {
       <div className="relative">
         <ul className="flex gap-10 items-center text-sm text-gray-800 cursor-pointer">
           <Link to="/">
-            <li className="uppercase">home</li>
+            <li
+              className={`uppercase ${
+                location.pathname === "/" ? "active" : ""
+              }`}
+            >
+              home
+            </li>
           </Link>
           <Link to="/about">
-            <li className="uppercase">about</li>
+            <li
+              className={`relative uppercase cursor-pointer  underline-animation ${
+                location.pathname === "/about" ? "active" : ""
+              }`}
+            >
+              about
+            </li>
           </Link>
           <li
-            className="relative uppercase cursor-pointer"
+            className={`relative uppercase cursor-pointer  underline-animation ${
+              location.pathname === "/services" ||
+              location.pathname === "/software_development" ||
+              location.pathname === "/design&development" ||
+              location.pathname === "/others" ||
+              location.pathname === "/digital_marketing"
+                ? "active"
+                : ""
+            }`}
             onMouseEnter={handleMouseEnter}
             onMouseLeave={handleMouseLeave}
           >
@@ -57,17 +78,31 @@ function Header() {
               <>
                 {isDropdownOpen && (
                   <ul
-                    className="absolute left-0 mt-2 w-48 bg-white border border-gray-200 rounded shadow-lg"
+                    className="absolute left-0 mt-2 w-48 bg-white border font-normal border-gray-200 rounded shadow-lg"
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                   >
                     <Link to="/software_development">
-                      <li className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[12px]">
+                      <li
+                        // className={`
+                        //    `}
+                        className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[12px] ${
+                          location.pathname === "/software_development"
+                            ? "active"
+                            : ""
+                        }`}
+                      >
                         Software Development
                       </li>
                     </Link>
                     <Link to="/design&development">
-                      <li className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[12px]">
+                      <li
+                        className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[12px] ${
+                          location.pathname === "/design&development"
+                            ? "active"
+                            : ""
+                        }`}
+                      >
                         Design &amp; Development
                       </li>
                     </Link>
@@ -77,12 +112,22 @@ function Header() {
                       </li>
                     </a>
                     <Link to="/digital_marketing">
-                      <li className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[12px]">
+                      <li
+                        className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[12px] ${
+                          location.pathname === "/digital_marketing"
+                            ? "active"
+                            : ""
+                        }`}
+                      >
                         Digital Marketing
                       </li>
                     </Link>
                     <Link to="/others">
-                      <li className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[12px]">
+                      <li
+                        className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[12px] ${
+                          location.pathname === "/others" ? "active" : ""
+                        }`}
+                      >
                         Others
                       </li>
                     </Link>
@@ -95,10 +140,14 @@ function Header() {
             <li className="uppercase">careers</li>
           </Link> */}
           <Link to="/portfolio">
-            <li className="uppercase">portfolio</li>
+            <li  className={`relative uppercase cursor-pointer  underline-animation ${
+                location.pathname === "/portfolio" ? "active" : ""
+              }`}>portfolio</li>
           </Link>
           <Link to="/contact">
-            <li className="uppercase">contact</li>
+            <li  className={`relative uppercase cursor-pointer  underline-animation ${
+                location.pathname === "/contact" ? "active" : ""
+              }`}>contact</li>
           </Link>
         </ul>
       </div>
