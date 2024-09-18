@@ -16,11 +16,11 @@ function SubPortfolio() {
             <Card key={index} project={project} show={true} />
           ))}
         </div>
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-6 mt-8">
+        {/* <div className="grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-6 mt-8">
           {accelerators.map((project, index) => (
             <Card key={index} project={project} show={true} />
           ))}
-        </div>
+        </div> */}
       </div>
     </div>
   );
