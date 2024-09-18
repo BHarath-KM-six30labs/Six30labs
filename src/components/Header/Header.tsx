@@ -33,11 +33,11 @@ function Header() {
           <span className="text-[#03B7C9] text-[12px]">CODE. EAT. REPEAT.</span>
         </span>
       </div>
-      <div className="relative">
+      <div className="hidden md:block">
         <ul className="flex gap-10 items-center text-sm text-gray-800 cursor-pointer">
           <Link to="/">
             <li
-              className={`uppercase ${
+              className={`relative uppercase underline-animation  ${
                 location.pathname === "/" ? "active" : ""
               }`}
             >
