@@ -79,7 +79,7 @@ const router = createBrowserRouter([
             element: <PortfolioOthers />,
           },
           {
-            path: "view-more/:id",
+            path: "view-more/:section/:id",
             element: <ViewMore />,
           },
         ],

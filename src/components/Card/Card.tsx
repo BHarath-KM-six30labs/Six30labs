@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 interface Project {
   id?: number;
@@ -17,7 +17,11 @@ interface CardProps {
 
 const Card: React.FC<CardProps> = ({ project, show }) => {
   // const [showDetails, setShowDetails] = useState(false);
-  const acc = "accelerators";
+  const acc  = useLocation();
+  console.log(acc.pathname)
+  const service = acc.pathname.split("/")
+  const serviceParam = service[service.length-1]
+  console.log(serviceParam)
   const navigate = useNavigate();
   return (
     <>
@@ -39,7 +43,7 @@ const Card: React.FC<CardProps> = ({ project, show }) => {
                 className="mt-2 text-[11px] text-[#41B98C]  px-3 py-2 absolute bottom-0 right-0"
                 onClick={() => {
                   // setShowDetails(!showDetails);
-                  navigate(`/portfolio/view-more/${project.id}`);
+                  navigate(`/portfolio/view-more/${serviceParam}/${project.id}`);
                 }}
               >
                 View Details
