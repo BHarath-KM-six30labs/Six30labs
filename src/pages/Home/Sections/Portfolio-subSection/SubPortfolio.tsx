@@ -1,5 +1,5 @@
 import { data } from "../Data-sets/Portfolio";
-import { accelerators } from "../Data-sets/accelerators";
+// import { accelerators } from "../Data-sets/accelerators";
 import Card from "../../../../components/Card/Card";
 import { useEffect } from "react";
 

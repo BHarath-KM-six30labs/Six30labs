@@ -43,7 +43,7 @@ const Card: React.FC<CardProps> = ({ project, show }) => {
                 className="mt-2 text-[11px] text-[#41B98C]  px-3 py-2 absolute bottom-0 right-0"
                 onClick={() => {
                   // setShowDetails(!showDetails);
-                  navigate(`/portfolio/view-more/${serviceParam}/${project.id}`);
+                  navigate(`/portfolio/view-more/${serviceParam}/${project.id}`, { state: { project } });
                 }}
               >
                 View Details

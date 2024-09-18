@@ -33,6 +33,16 @@ export const data = [
         "An MIS is a digital tool used to manage and analyze data from various sources within a commercial property. It allows for tracking key performance indicators (KPIs), generating reports, and providing insights for better decision-making. With an MIS, commercial properties can streamline data analysis, improve overall efficiency, and make informed decisions.",
       image: MIS,
       button:true,
+      content: [
+        {
+          heading: "",
+          list: [
+            
+          ],
+          testimonials: [
+           ],
+        },
+      ],
     },
     {
       id:4,
@@ -52,6 +62,16 @@ export const data = [
         "A DMS is a digital tool used to store, organize, and manage documents within a commercial property. It allows for easy retrieval, editing, and sharing of documents, improving collaboration and productivity across teams and departments.",
       image: DocumentMs,
       button:true,
+      content: [
+        {
+          heading: "",
+          list: [
+            
+          ],
+          testimonials: [
+           ],
+        },
+      ],
     },
     {
       id:6,
