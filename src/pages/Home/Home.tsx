@@ -9,7 +9,7 @@ function Home() {
   return (
     <>
       <div className="mmd:flex flex-wrap">
-        <div className="flex flex-1 flex-col px-32  mmd:ml-32 ">
+        <div className="flex flex-1 flex-col pmd:ml-32 ml-20 ">
           <span className="  mt-[80px] leading-[45px]">
             <span className="font-bold text-7xl">
               ENGINEERING <br />
