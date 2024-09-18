@@ -10,7 +10,7 @@ function SubPortfolio() {
   return (
     <div className="mt-8 bg-[#ededed] ">
       <div className=" py-10 md:px-32 px-5">
-        <span className="text-2xl font-semibold">PORTFOLIO</span>
+        <span className="text-2xl font-semibold">PLATFORMS</span>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-6 mt-8">
           {data.map((project, index) => (
             <Card key={index} project={project} show={true} />

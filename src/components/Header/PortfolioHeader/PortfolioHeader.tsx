@@ -8,7 +8,7 @@ function PortfolioHeader() {
     <ul className="flex gap-10 items-center text-sm text-gray-800 cursor-pointer ml-32 mt-16 relative">
       <Link to="/portfolio">
         <li className={`uppercase relative underline-animation ${location.pathname === '/portfolio' ? 'active' : ''}`}>
-          Portfolio
+          Platforms
         </li>
       </Link>
       <Link to="accelerators">
