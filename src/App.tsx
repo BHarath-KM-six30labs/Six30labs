@@ -10,11 +10,12 @@ import DigitalMarketing from "./pages/Services/Sections/DigitalMarketing";
 import DesignAndDevelopment from "./pages/Services/Sections/DesignAndDevelopment";
 import SoftwareDevelopMent from "./pages/Services/Sections/SoftwareDevelopMent";
 import Others from "./pages/Services/Sections/Others";
-import Portfolio from "./pages/Home/Sections/Portfolio";
+// import Portfolio from "./pages/Home/Sections/Portfolio";
 import PortfolioLayout from "./Layout/PortfolioLayout";
 import Accelerators from "./pages/Home/Sections/Portfolio-subSection/Accelerators";
 import SubPortfolio from "./pages/Home/Sections/Portfolio-subSection/SubPortfolio";
 import PortfolioOthers from "./pages/Home/Sections/Portfolio-subSection/PortfolioOthers";
+import ViewMore from "./pages/Home/Sections/Portfolio-subSection/ViewMore";
 
 const router = createBrowserRouter([
   {
@@ -70,12 +71,16 @@ const router = createBrowserRouter([
             element: <SubPortfolio />,
           },
           {
-            path:"accelerators",
-            element:<Accelerators/>
+            path: "accelerators",
+            element: <Accelerators />,
           },
           {
-            path:"portfolio-others",
-            element:<PortfolioOthers/>
+            path: "portfolio-others",
+            element: <PortfolioOthers />,
+          },
+          {
+            path: "view-more/:id",
+            element: <ViewMore />,
           },
         ],
       },

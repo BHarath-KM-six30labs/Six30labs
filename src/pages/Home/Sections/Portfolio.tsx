@@ -6,21 +6,21 @@ import { accelerators } from "./Data-sets/accelerators";
 
 function Portfolio() {
   return (
-    <div className="mt-8 bg-[#ededed] ">
-      <div className="px-32 py-10">
-        <span className="text-2xl font-semibold">PORTFOLIO</span>
-        <div className="grid grid-cols-3 gap-6 mt-8">
+    <div className="mt-8 bg-[#ededed]">
+      <div className="px-4 sm:px-8 md:px-16 lg:px-32 py-10">
+        <span className="text-xl sm:text-2xl font-semibold">PORTFOLIO</span>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
           {data.map((project, index) => (
             <Card key={index} project={project} show={false} />
           ))}
         </div>
-        <h3 className="text-2xl font-semibold mt-10">ACCELERATORS</h3>
-        <div className="grid grid-cols-3 gap-6 mt-8">
+        <h3 className="text-xl sm:text-2xl font-semibold mt-10">ACCELERATORS</h3>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mt-8">
           {accelerators.map((project, index) => (
             <Card key={index} project={project} show={false} />
           ))}
         </div>
-        <div className="py-10 ">
+        <div className="py-10 text-center">
           <Link to="portfolio">
             <Button text={"Learn More"} />
           </Link>

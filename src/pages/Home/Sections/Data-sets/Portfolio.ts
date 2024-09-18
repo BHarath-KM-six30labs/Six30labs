@@ -8,6 +8,7 @@ import Sync from "../../../../assets/Sync.png";
 
 export const data = [
     {
+      id:1,
       name: "Themindstreet - EdTech",
       description:
         "Unlocking Education Excellence: A Unique Learning Management System",
@@ -16,6 +17,7 @@ export const data = [
       image: EdTech,
     },
     {
+      id:2,
       name: "MedX",
       description: "Equipment Management System for Hospitals and Clinics",
       details:
@@ -23,14 +25,17 @@ export const data = [
       image: MedX,
     },
     {
+      id:3,
       name: "MIS360 /HRMS",
       description:
         "Management Information System (MIS): Streamline Data Analysis and Improve Decision-Making",
       details:
         "An MIS is a digital tool used to manage and analyze data from various sources within a commercial property. It allows for tracking key performance indicators (KPIs), generating reports, and providing insights for better decision-making. With an MIS, commercial properties can streamline data analysis, improve overall efficiency, and make informed decisions.",
       image: MIS,
+      button:true,
     },
     {
+      id:4,
       name: "REDT",
       description:
         "Empowering Real Estate Businesses through Digital Transformation",
@@ -39,14 +44,17 @@ export const data = [
       image: Redit,
     },
     {
+      id:5,
       name: "Document Management System",
       description:
         "Document Management System (DMS): Simplify Document Management and Improve Collaboration",
       details:
         "A DMS is a digital tool used to store, organize, and manage documents within a commercial property. It allows for easy retrieval, editing, and sharing of documents, improving collaboration and productivity across teams and departments.",
       image: DocumentMs,
+      button:true,
     },
     {
+      id:6,
       name: "SYNC",
       description:
         "Empowering Project Management: Unleash Efficiency with SYNC",
