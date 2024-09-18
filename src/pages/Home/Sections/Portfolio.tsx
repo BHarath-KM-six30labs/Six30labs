@@ -20,7 +20,7 @@ function Portfolio() {
             <Card key={index} project={project} show={false} />
           ))}
         </div>
-        <div className="py-10 text-center">
+        <div className="py-10 ">
           <Link to="portfolio">
             <Button text={"Learn More"} />
           </Link>
