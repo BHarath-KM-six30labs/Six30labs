@@ -8,8 +8,8 @@ import Portfolio from "./Sections/Portfolio";
 function Home() {
   return (
     <>
-      <div className="flex ">
-        <div className="flex flex-1 flex-col  ml-32 ">
+      <div className="mmd:flex flex-wrap">
+        <div className="flex flex-1 flex-col px-32  mmd:ml-32 ">
           <span className="  mt-[80px] leading-[45px]">
             <span className="font-bold text-7xl">
               ENGINEERING <br />

@@ -1,0 +1,126 @@
+import { Link, useLocation } from "react-router-dom";
+import logo from "../../assets/Logo.png";
+import { useState, useRef } from "react";
+import "./header.css";
+
+const Header: React.FC = () => {
+  const [isDropdownOpen, setIsDropdownOpen] = useState<boolean>(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
+  const timeoutRef = useRef<number | null>(null);
+  const location = useLocation();
+
+  const handleMouseEnter = () => {
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+    setIsDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timeoutRef.current = setTimeout(() => {
+      setIsDropdownOpen(false);
+    }, 300);
+  };
+
+  const toggleMobileMenu = () => {
+    setIsMobileMenuOpen((prev) => !prev);
+  };
+
+  return (
+    <div className="flex justify-between items-center px-4 py-2 md:px-32">
+      <div className="flex items-center gap-3">
+        <img src={logo} alt="six30labs-Logo" className="w-[60px]" />
+        <span className="flex flex-col">
+          <span className="text-[#41B98C] font-bold text-[20px]">SIX30 LABS</span>
+          <span className="text-[#03B7C9] text-[12px]">CODE. EAT. REPEAT.</span>
+        </span>
+      </div>
+
+      {/* Desktop Menu */}
+      <div className="hidden md:block">
+        <ul className="flex gap-10 items-center text-sm text-gray-800 cursor-pointer">
+          <Link to="/">
+            <li className={`relative uppercase underline-animation ${location.pathname === "/" ? "active" : ""}`}>home</li>
+          </Link>
+          <Link to="/about">
+            <li className={`relative uppercase cursor-pointer underline-animation ${location.pathname === "/about" ? "active" : ""}`}>about</li>
+          </Link>
+          <li
+            className={`relative uppercase cursor-pointer underline-animation ${["/services", "/software_development", "/design&development", "/others", "/digital_marketing"].includes(location.pathname) ? "active" : ""}`}
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+          >
+            <Link to="/services"><span>services</span></Link>
+            {isDropdownOpen && (
+              <ul className="absolute left-0 mt-2 w-48 bg-white border font-normal border-gray-200 rounded shadow-lg">
+                {/* Dropdown Items */}
+                <DropdownItem to="/software_development" active={location.pathname === "/software_development"}>Software Development</DropdownItem>
+                <DropdownItem to="/design&development" active={location.pathname === "/design&development"}>Design &amp; Development</DropdownItem>
+                <DropdownItem to="https://bloomlabs.in/">Training &amp; Development</DropdownItem>
+                <DropdownItem to="/digital_marketing" active={location.pathname === "/digital_marketing"}>Digital Marketing</DropdownItem>
+                <DropdownItem to="/others" active={location.pathname === "/others"}>Others</DropdownItem>
+              </ul>
+            )}
+          </li>
+          <Link to="/portfolio">
+            <li className={`relative uppercase cursor-pointer underline-animation ${location.pathname === "/portfolio" ? "active" : ""}`}>portfolio</li>
+          </Link>
+          <Link to="/contact">
+            <li className={`relative uppercase cursor-pointer underline-animation ${location.pathname === "/contact" ? "active" : ""}`}>contact</li>
+          </Link>
+        </ul>
+      </div>
+
+      {/* Mobile Menu Toggle */}
+      <div className="md:hidden flex items-center">
+        <button onClick={toggleMobileMenu} className="text-gray-800">
+          {isMobileMenuOpen ? "✖️" : "☰"}
+        </button>
+      </div>
+
+      {/* Mobile Menu */}
+      {isMobileMenuOpen && (
+        <div className="md:hidden absolute top-16 left-0 w-full bg-white shadow-lg">
+          <ul className="flex flex-col items-center text-sm text-gray-800">
+            <MobileMenuItem to="/" active={location.pathname === "/"}>Home</MobileMenuItem>
+            <MobileMenuItem to="/about" active={location.pathname === "/about"}>About</MobileMenuItem>
+            <MobileMenuItem to="/services" active={location.pathname.includes("/services")}>Services</MobileMenuItem>
+            <MobileMenuItem to="/portfolio" active={location.pathname === "/portfolio"}>Portfolio</MobileMenuItem>
+            <MobileMenuItem to="/contact" active={location.pathname === "/contact"}>Contact</MobileMenuItem>
+          </ul>
+        </div>
+      )}
+    </div>
+  );
+};
+
+interface DropdownItemProps {
+  to: string;
+  children: React.ReactNode;
+  active?: boolean;
+  href?: string;
+}
+
+const DropdownItem: React.FC<DropdownItemProps> = ({ to, children, active, href }) => (
+  <Link to={to} target={href ? "_blank" : undefined}>
+    <li className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[12px] ${active ? "active" : ""}`}>
+      {children}
+    </li>
+  </Link>
+);
+
+interface MobileMenuItemProps {
+  to: string;
+  children: React.ReactNode;
+  active?: boolean;
+}
+
+const MobileMenuItem: React.FC<MobileMenuItemProps> = ({ to, children, active }) => (
+  <Link to={to}>
+    <li className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[12px] ${active ? "active" : ""}`}>
+      {children}
+    </li>
+  </Link>
+);
+
+export default Header;
