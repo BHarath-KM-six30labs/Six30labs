@@ -23,7 +23,7 @@ function Header() {
   };
 
   return (
-    <div className="flex justify-between items-center pmd:px-32 px-5 py-2 sm:px-20">
+    <div className="flex justify-between items-center pmd:px-32 px-5 py-2 sm:px-20 sticky top-0 bg-white z-10">
       <div className="flex flex-1 items-center gap-5 ">
         <img src={logo} alt="six30labs-Logo" className="w-[60px]" />
         <span className="flex flex-col">
