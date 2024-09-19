@@ -41,7 +41,7 @@ function PortfolioOthers() {
     //     </div>
     //   </div>
     // </>
-    <div className="mt-8 bg-[#ededed] px-4 sm:px-8 md:px-16 lg:px-32 py-3">
+    <div className="mt-8 bg-[#ededed] px-4 sm:px-8 md:px-16 pmd:px-32  py-3">
       <h3 className="text-xl sm:text-2xl font-semibold mt-10 uppercase ">Others</h3>
       <div className="grid grid-cols-1  gap-6 mt-8">
         {others.map((item, index) => (
