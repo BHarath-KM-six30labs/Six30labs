@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/Logo.png";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import "./header.css";
 function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -21,9 +21,28 @@ function Header() {
       setIsDropdownOpen(false);
     }, 300);
   };
+  const [isSticky, setIsSticky] = useState(false);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      
+      const offset = window.scrollY;
+      if (offset > 100) { 
+        setIsSticky(true);
+      } else {
+        setIsSticky(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+   
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
-    <div className="flex justify-between items-center pmd:px-32 px-5 py-2 sm:px-20 sticky top-0 bg-white z-10">
+    <div className={`flex justify-between items-center pmd:px-32 px-5 py-2 sm:px-20  ${isSticky ? 'sticky top-0 bg-white z-10':''}`}>
       <div className="flex flex-1 items-center gap-5 ">
         <img src={logo} alt="six30labs-Logo" className="w-[60px]" />
         <span className="flex flex-col">
