@@ -28,7 +28,7 @@ function Carousel() {
           id="item2"
           className="carousel-item w-full text-center flex flex-col items-center"
         >
-          <p className="px-4 md:px-20 lg:px-52 text-sm">
+          <p className="px-4 md:px-20 lg:px-52 ">
             Your team has been extremely friendly as well as prompt in all their
             responses.
           </p>
@@ -41,7 +41,7 @@ function Carousel() {
           id="item3"
           className="carousel-item w-full text-center flex flex-col items-center"
         >
-          <p className="px-4 md:px-20 lg:px-52 text-sm">
+          <p className="px-4 md:px-20 lg:px-52 ">
             We approached Six30 Labs with a requirement for a premium website,
             SEO and SMM needs. The team at 630 has been ever so helpful in
             fulfilling all our needs and meeting {!toggle && <>...</>}

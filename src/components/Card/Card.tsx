@@ -37,7 +37,7 @@ const Card: React.FC<CardProps> = ({ project, show }) => {
         <p className="text-[13px] font-semibold">{project.description}</p>
         {show && (
           <>
-            <p className="mt-2 text-[11px] text-gray-600">{project.details}</p>
+            <p className="mt-2 text-[11px] text-gray-600 mb-6">{project.details}</p>
             {project.button && (
               <button
                 className="mt-2 text-[11px] text-[#41B98C]  px-3 py-2 absolute bottom-0 right-0"

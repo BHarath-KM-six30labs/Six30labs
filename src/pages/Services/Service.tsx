@@ -7,13 +7,13 @@ function Service() {
       {servicesData.map((service, index) => (
         <div
           key={service.id}
-          className={`flex items-center py-10 mt-5  ${index % 2 === 0 ? 'flex-row bg-[#F9F9F9] ' : 'flex-row-reverse'}`}
+          className={`pmd:flex  items-center py-10 mt-5  ${index % 2 === 0 ? 'flex-row bg-[#F9F9F9] ' : 'flex-row-reverse'}`}
         >
-          <div className='flex-1'>
+          <div className='flex-1 '>
             <img
               src={service.image}
               alt={service.heading}
-              className='w-40 h-auto max-w-md mx-auto'
+              className='w-40 h-auto max-w-md mx-auto mb-[20px]'
             />
           </div>
           <div className='flex-1 px-6 '>

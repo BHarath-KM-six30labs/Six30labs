@@ -7,8 +7,10 @@ export default {
       // 'sm': '576px',
       // => @media (min-width: 576px) { ... }
       md: "752px",
-      mmd: "960px",
-      pmd:"800px"
+      mmd: "1020px",
+      // pmd:"870px",
+      pmd:"900px",
+      sm:"680px"
       // => @media (min-width: 960px) { ... }
 
       // 'lg': '1440px',
