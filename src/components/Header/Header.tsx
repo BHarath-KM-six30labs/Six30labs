@@ -141,7 +141,7 @@ function Header() {
           </Link> */}
           <Link to="/portfolio">
             <li  className={`relative uppercase cursor-pointer  underline-animation ${
-                location.pathname === "/portfolio" ? "active" : ""
+                (location.pathname === "/portfolio" || location.pathname === "/portfolio/accelerators" || location.pathname === "/portfolio/portfolio-others") ? "active" : ""
               }`}>portfolio</li>
           </Link>
           <Link to="/contact">
