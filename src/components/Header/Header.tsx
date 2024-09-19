@@ -106,7 +106,7 @@ function Header() {
                         Design &amp; Development
                       </li>
                     </Link>
-                    <a href="https://bloomlabs.in/">
+                    <a href="https://bloomlabs.in/" target="_blank">
                       <li className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[12px]">
                         Training &amp; Development
                       </li>
