@@ -50,7 +50,7 @@ const ViewMore: React.FC = () => {
           {project.content[0].testimonials.map((testimonial: string, index: number) => (
             <li
               key={index}
-              className="shadow-md bg-white p-4 rounded-md border relative flex flex-col justify-between h-[11rem]"
+              className="shadow-md bg-white p-4 rounded-md border relative flex flex-col justify-between min-h-[11rem]"
             >
               <div className="flex-grow">
                 {testimonial}
