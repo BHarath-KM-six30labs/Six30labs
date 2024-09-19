@@ -1,3 +1,4 @@
+// import { IoPersonOutline } from "react-icons/io5";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 
@@ -13,11 +14,9 @@ const ViewMore: React.FC = () => {
       </div>
     );
   }
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
-
   return (
     <div className="bg-gray-100 mt-8">
       <div className="py-10 md:px-32 px-5 rounded-lg shadow-lg bg-white">
@@ -46,23 +45,27 @@ const ViewMore: React.FC = () => {
         <p className="text-gray-600 text-lg text-center mb-6">
           Here's what our clients have to say about our Help Desk Software:
         </p>
-        <ul className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-4">
-          {project.content[0].testimonials.map((testimonial: string, index: number) => (
-            <li
-              key={index}
-              className="shadow-md bg-white p-4 rounded-md border relative flex flex-col justify-between h-[11rem]"
-            >
-              <div className="flex-grow">
-                {testimonial}
-              </div>
-              <div className="flex items-center gap-4 mt-4">
-                <p className="border-2 border-[#41B98C] rounded-full p-2"></p>
-                <p className="font-semibold">
-                  {index % 2 === 0 ? "Client A" : "Client B"}
-                </p>
-              </div>
-            </li>
-          ))}
+        <ul className="mt-2 grid grid-cols-1 md:grid-cols-2 gap-4 h-56  ">
+          {project.content[0].testimonials.map(
+            (testimonial: string, index: number) => (
+              <>
+                <li
+                  key={index}
+                  className="shadow-md bg-white p-4 rounded-md mt-1  border  relative h-[11rem]"
+                >
+                  {testimonial}
+                  <div className="flex absolute bottom-5  items-center gap-4">
+                    <p className="border-2 border-[#41B98C] rounded-full p-2 ">
+                      
+                    </p>
+                    <p className="font-semibold">
+                      {index % 2 === 0 ? "Client A" : "Client B"}
+                    </p>
+                  </div>
+                </li>
+              </>
+            )
+          )}
         </ul>
       </div>
     </div>
