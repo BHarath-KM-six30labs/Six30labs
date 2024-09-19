@@ -7,17 +7,17 @@ function Home() {
   return (
     <>
       <div className="mmd:flex flex-wrap">
-        <div className="flex flex-1 flex-col pmd:ml-32 sm:ml-20 ml-5">
+        <div className="flex flex-1 flex-col pmd:ml-32 sm:ml-20 mx-5">
           <span className="mt-[80px] leading-[45px]">
             <span className="font-bold mmd:text-7xl sm:text-6xl text-5xl">
               ENGINEERING <br />
             </span>
             <span className="mmd:text-5xl sm:text-4xl text-4xl font-semibold">
-              INNOVATION AND DESIGNING  THE FUTURE
+              INNOVATION AND DESIGNING THE FUTURE
             </span>
             <br />
           </span>
-          <span className="leading-8 mt-5 tracking-wide mmd:mr-0 sm:mr-20 mr-5">
+          <span className="leading-8 mt-5 tracking-wide mmd:mr-0 sm:mr-20 ">
             In a fast-changing tech world, Six30 Labs (formerly Aspelec
             Technologies), founded in 2011, delivers innovative, high-quality
             software solutions. Our global team specializes in mobile
