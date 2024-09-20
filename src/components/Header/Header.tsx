@@ -5,6 +5,8 @@ import "./header.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
+import { AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 interface MobileMenuItemProps {
   to: string; // or whatever type 'to' should be
@@ -206,90 +208,121 @@ function Header() {
       </div>
       <div className="md:hidden flex items-center">
         <button onClick={toggleMobileMenu} className="text-gray-800">
-          {isMobileMenuOpen ? <IoMdClose  color="#41B98C" size={25}/> : <GiHamburgerMenu size={25} color="#41B98C"/>}
+          {isMobileMenuOpen ? (
+            <IoMdClose color="#41B98C" size={25} />
+          ) : (
+            <GiHamburgerMenu size={25} color="#41B98C" />
+          )}
         </button>
       </div>
 
       {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div 
-        className={`md:hidden absolute top-14 left-0 w-full bg-white shadow-lg z-50`}
-        
-        >
-          <ul className="flex flex-col p-5 text-sm text-gray-800">
-            <MobileMenuItem to="/" active={location.pathname === "/"}>
-              Home
-            </MobileMenuItem>
-            <MobileMenuItem to="/about" active={location.pathname === "/about"}>
-              About
-            </MobileMenuItem>
-            <MobileMenuItem
-              to="/services"
-              active={location.pathname.includes("/services")}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
+            <div
+              className={`md:hidden absolute top-14 left-0 w-full bg-white shadow-lg z-50 transition-transform duration-300 ease-in-out`}
             >
-              <span className="flex justify-between">
-                Services{" "}
-                <button className="font-normal" onClick={showSubmenu}>
-                  {showSubMenu ? <FaCaretUp  color="#41B98C" size={20}/> : <FaCaretDown color="#41B98C" size={20}/>}
-                </button>
-              </span>
-            </MobileMenuItem>
-            {/* submenu */}
-            {showSubMenu && (
-              <>
-                <MobileMenuItem
-                  to="/software_development"
-                  active={location.pathname.includes("/software_development")}
-                >
-                  <span className="ml-5">Software Development </span>
+              <ul className="flex flex-col p-5 text-sm text-gray-800 ">
+                <MobileMenuItem to="/" active={location.pathname === "/"}>
+                  Home
                 </MobileMenuItem>
                 <MobileMenuItem
-                  to="/design&development"
-                  active={location.pathname === "/design&development"}
+                  to="/about"
+                  active={location.pathname === "/about"}
                 >
-                  <span className="ml-5">Design &amp; Development</span>
+                  About
                 </MobileMenuItem>
+                <MobileMenuItem
+                  to="/services"
+                  active={location.pathname.includes("/services")}
+                >
+                  <span className="flex justify-between">
+                    Services{" "}
+                    <button className="font-normal" onClick={showSubmenu}>
+                      {showSubMenu ? (
+                        <FaCaretUp color="#41B98C" size={20} />
+                      ) : (
+                        <FaCaretDown color="#41B98C" size={20} />
+                      )}
+                    </button>
+                  </span>
+                </MobileMenuItem>
+                {/* submenu */}
+                <AnimatePresence>
+                {showSubMenu && (
+                    <>
+                      <motion.div
+                         initial={{ opacity: 0, y: -20 }} 
+                         animate={{ opacity: 1, y: 0 }} 
+                         exit={{ opacity: 0, y: -20 }} 
+                         transition={{ duration: 0.2 }} 
+                      >
+                        <MobileMenuItem
+                          to="/software_development"
+                          active={location.pathname.includes(
+                            "/software_development"
+                          )}
+                        >
+                          <span className="ml-5">Software Development </span>
+                        </MobileMenuItem>
+                        <MobileMenuItem
+                          to="/design&development"
+                          active={location.pathname === "/design&development"}
+                        >
+                          <span className="ml-5">Design &amp; Development</span>
+                        </MobileMenuItem>
 
-                <a
-                  href="https://bloomlabs.in/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <li className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[11px]">
-                    <span className="ml-5">Training &amp; Development</span>
-                  </li>
-                </a>
+                        <a
+                          href="https://bloomlabs.in/"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          <li className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[11px]">
+                            <span className="ml-5">
+                              Training &amp; Development
+                            </span>
+                          </li>
+                        </a>
 
-                <MobileMenuItem
-                  to="/digital_marketing"
-                  active={location.pathname === "/digital_marketing"}
-                >
-                  <span className="ml-5">Digital Marketing</span>
-                </MobileMenuItem>
+                        <MobileMenuItem
+                          to="/digital_marketing"
+                          active={location.pathname === "/digital_marketing"}
+                        >
+                          <span className="ml-5">Digital Marketing</span>
+                        </MobileMenuItem>
 
+                        <MobileMenuItem
+                          to="/others"
+                          active={location.pathname === "/others"}
+                        >
+                          <span className="ml-5">Others</span>
+                        </MobileMenuItem>
+                      </motion.div>
+                    </>
+                )}
+                </AnimatePresence>
                 <MobileMenuItem
-                  to="/others"
-                  active={location.pathname === "/others"}
+                  to="/portfolio"
+                  active={location.pathname === "/portfolio"}
                 >
-                  <span className="ml-5">Others</span>
+                  Portfolio
                 </MobileMenuItem>
-              </>
-            )}
-            <MobileMenuItem
-              to="/portfolio"
-              active={location.pathname === "/portfolio"}
-            >
-              Portfolio
-            </MobileMenuItem>
-            <MobileMenuItem
-              to="/contact"
-              active={location.pathname === "/contact"}
-            >
-              Contact
-            </MobileMenuItem>
-          </ul>
-        </div>
-      )}
+                <MobileMenuItem
+                  to="/contact"
+                  active={location.pathname === "/contact"}
+                >
+                  Contact
+                </MobileMenuItem>
+              </ul>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
 }
