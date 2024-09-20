@@ -1,6 +1,6 @@
 function Experiecnce() {
   return (
-    <div className="mt-8 flex flex-wrap justify-center items-center gap-6">
+    <div className="mt-8 flex flex-wrap justify-center items-center gap-6 mx-5">
       <span className="flex items-center gap-2">
         <span className="text-2xl md:text-3xl font-bold">4</span> PLATFORMS
       </span>

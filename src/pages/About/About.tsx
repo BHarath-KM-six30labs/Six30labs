@@ -25,7 +25,7 @@ function About() {
           <img
             src={about}
             alt="about"
-            className="w-[15rem] h-[15rem] transform transition-transform duration-300 hover:scale-105 mmd:w-[26rem] mmd:h-[26rem]"
+            className="w-[15rem] h-[11rem] transform transition-transform duration-300 hover:scale-105 mmd:w-[26rem] mmd:h-[26rem]"
           />
         </div>
       </div>

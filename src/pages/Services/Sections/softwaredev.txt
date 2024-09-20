@@ -1,14 +1,13 @@
-import { servicesData } from "../Sections/Data-sets/digitalMarketing";
+import { servicesData } from "../Sections/Data-sets/software-dev";
 
-
-function DigitalMarketing() {
+function SoftwareDevelopMent() {
   return (
     <div className="bg-[#f7f7f7]  text-white py-5">
       <div className="flex justify-center items-center gap-6">
         <span className="flex items-center gap-2">
           <hr className="w-8 border-[#41B98C] " />
           <span className="text-sm uppercase text-[#41B98C] font-semibold">
-            Degital Marketing
+            Software Development
           </span>
           <hr className="w-8 border-[#41B98C] " />
         </span>
@@ -17,7 +16,7 @@ function DigitalMarketing() {
         {servicesData.map((service, index) => (
           <div
             key={service.id}
-            className={`pmd:flex items-center py-10 mt-5 bg-white   ${
+            className={`flex items-center py-10 mt-5 bg-white   ${
               index % 2 === 0 ? "flex-row " : "flex-row-reverse"
             }`}
           >
@@ -25,7 +24,7 @@ function DigitalMarketing() {
               <img
                 src={service.image}
                 alt={service.heading}
-                className="w-64 h-auto max-w-md mx-auto pmd:mb-0 mb-5"
+                className="w-64 h-auto max-w-md mx-auto"
               />
             </div>
             <div className="flex-1 px-6 ">
@@ -43,4 +42,4 @@ function DigitalMarketing() {
   );
 }
 
-export default DigitalMarketing;
+export default SoftwareDevelopMent;

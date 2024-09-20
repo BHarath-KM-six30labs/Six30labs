@@ -16,7 +16,7 @@ function SoftwareDevelopMent() {
         {servicesData.map((service, index) => (
           <div
             key={service.id}
-            className={`flex items-center py-10 mt-5 bg-white   ${
+            className={`pmd:flex items-center py-10 mt-5 bg-white   ${
               index % 2 === 0 ? "flex-row " : "flex-row-reverse"
             }`}
           >
@@ -24,7 +24,7 @@ function SoftwareDevelopMent() {
               <img
                 src={service.image}
                 alt={service.heading}
-                className="w-64 h-auto max-w-md mx-auto"
+                className="w-64 h-auto max-w-md mx-auto pmd:mb-0 mb-5"
               />
             </div>
             <div className="flex-1 px-6 ">
