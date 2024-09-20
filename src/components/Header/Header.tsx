@@ -5,7 +5,6 @@ import "./header.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
-import { AnimatePresence, m } from "framer-motion";
 import { motion } from "framer-motion";
 
 function Header() {
