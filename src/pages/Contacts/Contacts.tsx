@@ -10,7 +10,7 @@ import ContactForm from "./sections/ContactForm";
 function Contacts() {
   return (
     <>
-      <div className="flex ml-32 mt-24 items-center">
+      <div className="mmd:flex flex-wrap mmd:ml-32 md:ml-20 mx-5 mmd:mt-24 md:mt-24 mt-14 items-center">
         <div className="flex-1">
           <h1 className="text-7xl font-bold">SAY HELLO</h1>
           <p className="mt-3 leading-7 text-gray-700 tracking-wider">
@@ -30,27 +30,27 @@ function Contacts() {
           <img
             src={contact}
             alt="image"
-            className="ml-32 h-[32rem] transform transition-transform duration-300 hover:scale-105"
+            className="mmd:ml-32 md:ml-20  mt-10 h-[32rem] transform transition-transform duration-300 hover:scale-105"
           />
         </div>
       </div>
       <div
-        className="flex justify-center items-center flex-col mt-14"
+        className="flex justify-center items-center flex-col mt-14 "
         style={{ backgroundImage: `url(${map})` }}
       >
         <Locations />
       </div>
 
       <div className="text-center mt-10">
-        <h3 className="text-4xl text-center  py-3">
+        <h3 className="mmd:text-4xl md:text-3xl text-2xl font-semibold text-center py-3 md:px-20 px-4">
           We can help your business make a difference.
         </h3>
-        <p className="leading-7 text-gray-700 tracking-wider">
+        <p className="leading-7 text-gray-700 tracking-wider mmd:text-xl md:text-xl text-sm px-6">
           Give us a few details and we’ll get back to you soon.
         </p>
       </div>
       <div className="mt-10">
-        <div className="flex flex-col md:flex-row justify-center items-center md:px-64 ">
+        <div className="mmd:flex flex-col md:flex-row justify-center items-center md:px-64 ">
           <div className="flex flex-col justify-center items-center flex-1 ">
             <GoQuestion size={40} color="#41B98C" />
             <h3 className="text-lg md:text-xl font-semibold mt-2">
