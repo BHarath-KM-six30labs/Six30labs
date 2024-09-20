@@ -26,11 +26,11 @@ function Contacts() {
             and you will be contacted within one business day.
           </p>
         </div>
-        <div className="flex-1">
+        <div className="flex-1 ">
           <img
             src={contact}
             alt="image"
-            className="mmd:ml-32 md:ml-20  mt-10 h-[32rem] transform transition-transform duration-300 hover:scale-105"
+            className="mmd:ml-32   mt-10 h-[32rem] transform transition-transform duration-300 hover:scale-105"
           />
         </div>
       </div>
@@ -42,7 +42,7 @@ function Contacts() {
       </div>
 
       <div className="text-center mt-10">
-        <h3 className="mmd:text-4xl md:text-3xl text-2xl font-semibold text-center py-3 md:px-20 px-4">
+        <h3 className="mmd:text-4xl md:text-3xl text-2xl font-semibold text-center !tracking-wider py-3 md:px-20 px-4">
           We can help your business make a difference.
         </h3>
         <p className="leading-7 text-gray-700 tracking-wider mmd:text-xl md:text-xl text-sm px-6">
