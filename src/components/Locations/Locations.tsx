@@ -1,5 +1,6 @@
 import React from "react";
 import { CiLocationOn } from "react-icons/ci";
+import { motion } from "framer-motion";
 
 const locations = [
   {
@@ -40,28 +41,36 @@ const Locations: React.FC = () => {
   return (
     <>
       <h3 className="mt-8 font-semibold text-center text-xl">GET DIRECTIONS</h3>
-      <div className="flex flex-wrap justify-center gap-4 mt-5 p-4">
-        {locations.map((location, index) => (
-          <div
-            key={index}
-            className="flex flex-col bg-white shadow-lg border justify-center items-center rounded-lg p-4 max-w-64 min-h-[200px] transition transform ease-in-out hover:scale-105"
-          >
-            <CiLocationOn className="text-3xl mb-2 text-[#41B98C]" />
-            <h3 className="font-semibold mb-2 text-xl">{location.city}</h3>
-            <p className="text-gray-600 flex-1 text-sm mb-4 text-center">
-              {location.address}
-            </p>
-            <a
-              href={location.mapUrl}
-              className="text-[#41B98C] mt-auto transition transform ease-in-out hover:scale-95 uppercase text-[11px]"
-              target="_blank"
-              rel="noopener noreferrer"
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        whileInView={{ opacity: 1, x: 0 }}
+        exit={{ opacity: 0, x: -30 }}
+        transition={{ duration: 0.9 }}
+        viewport={{ once: true }}
+      >
+        <div className="flex flex-wrap justify-center gap-4 mt-5 p-4">
+          {locations.map((location, index) => (
+            <div
+              key={index}
+              className="flex flex-col bg-white shadow-lg border justify-center items-center rounded-lg p-4 max-w-64 min-h-[200px] transition transform ease-in-out hover:scale-105"
             >
-              view on maps
-            </a>
-          </div>
-        ))}
-      </div>
+              <CiLocationOn className="text-3xl mb-2 text-[#41B98C]" />
+              <h3 className="font-semibold mb-2 text-xl">{location.city}</h3>
+              <p className="text-gray-600 flex-1 text-sm mb-4 text-center">
+                {location.address}
+              </p>
+              <a
+                href={location.mapUrl}
+                className="text-[#41B98C] mt-auto transition transform ease-in-out hover:scale-95 uppercase text-[11px]"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                view on maps
+              </a>
+            </div>
+          ))}
+        </div>
+      </motion.div>
     </>
   );
 };

@@ -19,11 +19,12 @@ interface CardProps {
 const Card: React.FC<CardProps> = ({ project, show }) => {
   // const [showDetails, setShowDetails] = useState(false);
   const acc  = useLocation();
-  console.log(acc.pathname)
+  // console.log(acc.pathname ,"ps")
   const service = acc.pathname.split("/")
   const serviceParam = service[service.length-1]
-  console.log(serviceParam)
+  // console.log(serviceParam)
   const navigate = useNavigate();
+  // console.log(acc,acc)
   return (
     <>
      <motion.div
@@ -34,7 +35,7 @@ const Card: React.FC<CardProps> = ({ project, show }) => {
             viewport={{ once: true }} 
           >
       <div
-        className={`relative bg-white p-4 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105`}
+        className={`relative bg-white p-4 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105 min-h-80 ${(acc.pathname === '/portfolio'|| acc.pathname === '/portfolio/accelerators') ? 'min-h-[30rem]':''}`}
       >
         <img
           src={project.image}
