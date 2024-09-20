@@ -241,7 +241,7 @@ function Header() {
                   to="/services"
                   active={location.pathname.includes("/services")}
                 >
-                  <span className="flex justify-between">
+                  <span className="flex justify-between ">
                     Services{" "}
                     <button className="font-normal" onClick={showSubmenu}>
                       {showSubMenu ? (
