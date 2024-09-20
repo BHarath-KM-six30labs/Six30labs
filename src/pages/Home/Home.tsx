@@ -38,11 +38,19 @@ function Home() {
           {/* </AnimatePresence> */}
         </div>
         <div className="flex flex-1 items-center justify-center ">
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
             // exit={{ opacity: 0, x: -20 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.6 }}
+          > */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }} 
+            exit={{ opacity: 0, x: -20 }} 
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }} 
           >
             <div className="mt-10 ">
               <img

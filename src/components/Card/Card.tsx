@@ -1,5 +1,6 @@
 import React from "react";
 import { useLocation, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 interface Project {
   id?: number;
@@ -25,6 +26,13 @@ const Card: React.FC<CardProps> = ({ project, show }) => {
   const navigate = useNavigate();
   return (
     <>
+     <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }} 
+            exit={{ opacity: 0, x: -20 }} 
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }} 
+          >
       <div
         className={`relative bg-white p-4 rounded-lg shadow-lg transform transition-transform duration-300 hover:scale-105`}
       >
@@ -52,6 +60,7 @@ const Card: React.FC<CardProps> = ({ project, show }) => {
           </>
         )}
       </div>
+      </motion.div>
       {/* {showDetails && (
         <>
           <p className="mt-2 text-[11px] text-gray-600">{project.details}</p>
