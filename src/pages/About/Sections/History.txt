@@ -1,7 +1,7 @@
 function History() {
   return (
     <div className="flex bg-[#f7f7f7]  pb-16 pt-16 mt-8">
-      <div className="flex flex-1 flex-col md:ml-20 ml-5 mmd:ml-32 pt-10  mmd:mr-24 mr-3 ">
+      <div className="flex flex-1 flex-col  ml-32 pt-10  mr-24  ">
         <span className="text-sm text-gray-500 mb-3">HISTORY</span>
         <h2 className="mb-8 text-4xl font-bold">Who are we?</h2>
         <p className=" leading-6 mb-2 tracking-wide ">
