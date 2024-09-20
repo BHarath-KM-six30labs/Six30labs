@@ -1,4 +1,4 @@
-import { AnimatePresence } from "framer-motion";
+// import { AnimatePresence } from "framer-motion";
 import cube from "../../assets/cube.png";
 import Carousel from "./Sections/Carousel";
 import Experiecnce from "./Sections/Experiecnce";
