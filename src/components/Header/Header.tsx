@@ -5,26 +5,31 @@ import "./header.css";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoMdClose } from "react-icons/io";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
-import { AnimatePresence } from "framer-motion";
+import { AnimatePresence, m } from "framer-motion";
 import { motion } from "framer-motion";
 
-interface MobileMenuItemProps {
-  to: string; // or whatever type 'to' should be
-  children: React.ReactNode;
-  active: boolean;
-}
+// interface MobileMenuItemProps {
+//   to: string; // or whatever type 'to' should be
+//   children: React.ReactNode;
+//   active: boolean;
+// }
 
 function Header() {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [showSubMenu, setShowSubMenu] = useState(false);
+  // const [showSubMenu, setShowSubMenu] = useState(false);
 
   const timeoutRef = useRef<number | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen((prev) => !prev);
   };
-  const showSubmenu = () => {
-    setShowSubMenu((pre) => !pre);
+  // const showSubmenu = () => {
+  //   setShowSubMenu((pre) => !pre);
+  // };
+
+  console.log(isDropdownOpen);
+  const handleClick = () => {
+    setIsDropdownOpen((prev) => !prev);
   };
   const location = useLocation();
   const handleMouseEnter = () => {
@@ -59,11 +64,11 @@ function Header() {
   }, []);
   return (
     <div
-      className={`flex justify-between items-center pmd:px-32 px-5 py-2 sm:px-20  ${
+      className={`flex justify-between items-center pmd:px-32 px-5 py-2 md:px-20  ${
         isSticky ? "sticky top-0 bg-white z-10" : ""
       }`}
     >
-      <div className="flex flex-1 items-center mmd:gap-5 md:gap-5 gap-2 ">
+      <div className="flex sm:flex-1 items-center mmd:gap-5 md:gap-5 gap-2 relative ">
         <img
           src={logo}
           alt="six30labs-Logo"
@@ -76,13 +81,19 @@ function Header() {
           <span className="text-[#03B7C9] text-[12px]">CODE. EAT. REPEAT.</span>
         </span>
       </div>
-      <div className=" flex-1 md:block hidden  w-full">
-        <ul className="flex justify-between gap-2  items-center text-sm text-gray-800 cursor-pointer">
+      <div className=" flex-1 ">
+        <ul
+          className={`${
+            isMobileMenuOpen
+              ? "flex flex-col absolute mt-3 z-20 top-[3rem] p-5  left-1/2 transform -translate-x-1/2 bg-white w-full transition-transform duration-300 ease-in-out "
+              : "mmd:flex md:flex hidden "
+          } flex justify-between gap-2  md:items-center mmd:items-center pl-10  md:text-sm mmd:text-sm text-[11px] text-gray-800 cursor-pointer`}
+        >
           <Link to="/">
             <li
-              className={`relative uppercase underline-animation  ${
+              className={`relative uppercase underline-animation ${
                 location.pathname === "/" ? "active" : ""
-              }`}
+              } ${isMobileMenuOpen ? "w-0" : ""}`}
             >
               home
             </li>
@@ -91,94 +102,109 @@ function Header() {
             <li
               className={`relative uppercase cursor-pointer  underline-animation ${
                 location.pathname === "/about" ? "active" : ""
-              }`}
+              } ${isMobileMenuOpen ? "w-0" : ""}`}
             >
               about
             </li>
           </Link>
-          <li
-            className={`relative uppercase cursor-pointer  underline-animation ${
-              location.pathname === "/services" ||
-              location.pathname === "/software_development" ||
-              location.pathname === "/design&development" ||
-              location.pathname === "/others" ||
-              location.pathname === "/digital_marketing"
-                ? "active"
-                : ""
-            }`}
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-          >
-            <Link to="/services">
-              {" "}
-              <span>services</span>
-            </Link>
-            {(location.pathname === "/services" ||
-              location.pathname === "/software_development" ||
-              location.pathname === "/design&development" ||
-              location.pathname === "/others" ||
-              location.pathname === "/digital_marketing") && (
-              <>
-                {isDropdownOpen && (
-                  <ul
-                    className="absolute left-0 mt-2 w-48 bg-white border font-normal border-gray-200 rounded shadow-lg"
-                    onMouseEnter={handleMouseEnter}
-                    onMouseLeave={handleMouseLeave}
-                  >
-                    <Link to="/software_development">
-                      <li
-                        // className={`
-                        //    `}
-                        className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[12px] ${
-                          location.pathname === "/software_development"
-                            ? "active"
-                            : ""
-                        }`}
-                      >
-                        Software Development
-                      </li>
-                    </Link>
-                    <Link to="/design&development">
-                      <li
-                        className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[12px] ${
-                          location.pathname === "/design&development"
-                            ? "active"
-                            : ""
-                        }`}
-                      >
-                        Design &amp; Development
-                      </li>
-                    </Link>
-                    <a href="https://bloomlabs.in/" target="_blank">
-                      <li className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[12px]">
-                        Training &amp; Development
-                      </li>
-                    </a>
-                    <Link to="/digital_marketing">
-                      <li
-                        className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[12px] ${
-                          location.pathname === "/digital_marketing"
-                            ? "active"
-                            : ""
-                        }`}
-                      >
-                        Digital Marketing
-                      </li>
-                    </Link>
-                    <Link to="/others">
-                      <li
-                        className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[12px] ${
-                          location.pathname === "/others" ? "active" : ""
-                        }`}
-                      >
-                        Others
-                      </li>
-                    </Link>
-                  </ul>
-                )}
-              </>
-            )}
-          </li>
+          <div className="relative ">
+            <li
+              className={`relative uppercase cursor-pointer  underline-animation ${
+                location.pathname === "/services" ||
+                location.pathname === "/software_development" ||
+                location.pathname === "/design&development" ||
+                location.pathname === "/others" ||
+                location.pathname === "/digital_marketing"
+                  ? "active"
+                  : ""
+              } ${isMobileMenuOpen ? "w-0" : ""}`}
+              // onMouseEnter={handleMouseEnter}
+              // onMouseLeave={handleMouseLeave}
+              onMouseEnter={
+                window.innerWidth > 768 ? handleMouseEnter : undefined
+              } // Replace 768 with your desired breakpoint
+              onMouseLeave={
+                window.innerWidth > 768 ? handleMouseLeave : undefined
+              }
+            >
+              <Link to="/services"> services</Link>
+              {
+              // (location.pathname === "/services" ||
+              //   location.pathname === "/software_development" ||
+              //   location.pathname === "/design&development" ||
+              //   location.pathname === "/others" ||
+              //   location.pathname === "/digital_marketing") && 
+              (
+                <>
+                  {isDropdownOpen && (
+                    <ul
+                      className={` mmd:absolute md:absolute  z-20 left-0 md:mt-2 mmd:mt-2 w-48 bg-white md:border mmd:border font-normal md:border-gray-200 md:rounded md:shadow-lg mmd:border-gray-200 mmd:rounded mmd:shadow-lg`}
+                      // onMouseEnter={handleMouseEnter}
+                      // onMouseLeave={handleMouseLeave}
+                    >
+                      <Link to="/software_development">
+                        <li
+                          className={`block px-4 md:py-2 mmd:py-2 py-[8px] text-gray-800 hover:bg-gray-100 md:text-[12px] mmd:text-[12px] text-[11px] ${
+                            location.pathname === "/software_development"
+                              ? "active"
+                              : ""
+                          }`}
+                        >
+                          Software Development
+                        </li>
+                      </Link>
+                      <Link to="/design&development">
+                        <li
+                          className={`block px-4  md:py-2 mmd:py-2 py-[8px] text-gray-800 hover:bg-gray-100 md:text-[12px] mmd:text-[12px] text-[11px] ${
+                            location.pathname === "/design&development"
+                              ? "active"
+                              : ""
+                          }`}
+                        >
+                          Design &amp; Development
+                        </li>
+                      </Link>
+                      <a href="https://bloomlabs.in/" target="_blank">
+                        <li className="block px-4  md:py-2 mmd:py-2 py-[8px] text-gray-800 hover:bg-gray-100 md:text-[12px] mmd:text-[12px] text-[11px]">
+                          Training &amp; Development
+                        </li>
+                      </a>
+                      <Link to="/digital_marketing">
+                        <li
+                          className={`block px-4  md:py-2 mmd:py-2 py-[8px] text-gray-800 hover:bg-gray-100 md:text-[12px] mmd:text-[12px] text-[11px] ${
+                            location.pathname === "/digital_marketing"
+                              ? "active"
+                              : ""
+                          }`}
+                        >
+                          Digital Marketing
+                        </li>
+                      </Link>
+                      <Link to="/others">
+                        <li
+                          className={`block px-4  md:py-2 mmd:py-2 py-[8px] text-gray-800 hover:bg-gray-100 md:text-[12px] mmd:text-[12px] text-[11px] ${
+                            location.pathname === "/others" ? "active" : ""
+                          }`}
+                        >
+                          Others
+                        </li>
+                      </Link>
+                    </ul>
+                  )}
+                </>
+              )}
+            </li>
+            <button
+              onClick={handleClick}
+              className="mmd:hidden md:hidden block absolute top-0 right-0"
+            >
+              {isDropdownOpen ? (
+                <FaCaretUp color="#41B98C" size={20} />
+              ) : (
+                <FaCaretDown color="#41B98C" size={20} />
+              )}
+            </button>
+          </div>
           {/* <Link to="/careers">
             <li className="uppercase">careers</li>
           </Link> */}
@@ -190,7 +216,7 @@ function Header() {
                 location.pathname === "/portfolio/portfolio-others"
                   ? "active"
                   : ""
-              }`}
+              } ${isMobileMenuOpen ? "w-0" : ""}`}
             >
               portfolio
             </li>
@@ -199,7 +225,7 @@ function Header() {
             <li
               className={`relative uppercase cursor-pointer  underline-animation ${
                 location.pathname === "/contact" ? "active" : ""
-              }`}
+              } ${isMobileMenuOpen ? "w-0" : ""}`}
             >
               contact
             </li>
@@ -215,126 +241,18 @@ function Header() {
           )}
         </button>
       </div>
-
-      {/* Mobile Menu */}
-      <AnimatePresence>
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-          >
-            <div
-              className={`md:hidden absolute top-14 left-0 w-full bg-white shadow-lg z-50 transition-transform duration-300 ease-in-out`}
-            >
-              <ul className="flex flex-col p-5 text-sm text-gray-800 ">
-                <MobileMenuItem to="/" active={location.pathname === "/"}>
-                  Home
-                </MobileMenuItem>
-                <MobileMenuItem
-                  to="/about"
-                  active={location.pathname === "/about"}
-                >
-                  About
-                </MobileMenuItem>
-                <MobileMenuItem
-                  to="/services"
-                  active={location.pathname.includes("/services")}
-                >
-                  <span className="flex justify-between ">
-                    Services{" "}
-                    <button className="font-normal" onClick={showSubmenu}>
-                      {showSubMenu ? (
-                        <FaCaretUp color="#41B98C" size={20} />
-                      ) : (
-                        <FaCaretDown color="#41B98C" size={20} />
-                      )}
-                    </button>
-                  </span>
-                </MobileMenuItem>
-                {/* submenu */}
-                <AnimatePresence>
-                {showSubMenu && (
-                    <>
-                      <motion.div
-                         initial={{ opacity: 0, y: -20 }} 
-                         animate={{ opacity: 1, y: 0 }} 
-                         exit={{ opacity: 0, y: -20 }} 
-                         transition={{ duration: 0.3 }} 
-                      >
-                        <MobileMenuItem
-                          to="/software_development"
-                          active={location.pathname.includes(
-                            "/software_development"
-                          )}
-                        >
-                          <span className="ml-5">Software Development </span>
-                        </MobileMenuItem>
-                        <MobileMenuItem
-                          to="/design&development"
-                          active={location.pathname === "/design&development"}
-                        >
-                          <span className="ml-5">Design &amp; Development</span>
-                        </MobileMenuItem>
-
-                        <a
-                          href="https://bloomlabs.in/"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                        >
-                          <li className="block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[11px]">
-                            <span className="ml-5">
-                              Training &amp; Development
-                            </span>
-                          </li>
-                        </a>
-
-                        <MobileMenuItem
-                          to="/digital_marketing"
-                          active={location.pathname === "/digital_marketing"}
-                        >
-                          <span className="ml-5">Digital Marketing</span>
-                        </MobileMenuItem>
-
-                        <MobileMenuItem
-                          to="/others"
-                          active={location.pathname === "/others"}
-                        >
-                          <span className="ml-5">Others</span>
-                        </MobileMenuItem>
-                      </motion.div>
-                    </>
-                )}
-                </AnimatePresence>
-                <MobileMenuItem
-                  to="/portfolio"
-                  active={location.pathname === "/portfolio"}
-                >
-                  Portfolio
-                </MobileMenuItem>
-                <MobileMenuItem
-                  to="/contact"
-                  active={location.pathname === "/contact"}
-                >
-                  Contact
-                </MobileMenuItem>
-              </ul>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </div>
   );
 }
-const MobileMenuItem = ({ to, children, active }: MobileMenuItemProps) => (
-  <Link to={to}>
-    <li
-      className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[11px]  ${
-        active ? "active " : ""
-      }`}
-    >
-      {children}
-    </li>
-  </Link>
-);
+// const MobileMenuItem = ({ to, children, active }: MobileMenuItemProps) => (
+//   <Link to={to}>
+//     <li
+//       className={`block px-4 py-2 text-gray-800 hover:bg-gray-100 text-[11px]  ${
+//         active ? "active " : ""
+//       }`}
+//     >
+//       {children}
+//     </li>
+//   </Link>
+// );
 export default Header;

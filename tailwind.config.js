@@ -10,7 +10,8 @@ export default {
       mmd: "1020px",
       // pmd:"870px",
       pmd:"900px",
-      sm:"680px"
+      // sm:"680px"
+      sm: "768px",
       // => @media (min-width: 960px) { ... }
 
       // 'lg': '1440px',
