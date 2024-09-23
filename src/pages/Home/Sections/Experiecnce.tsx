@@ -14,11 +14,15 @@ function Experience() {
     projects: 0,
   });
 
+  const [hasCounted, setHasCounted] = useState(false); 
+
   useEffect(() => {
-    if (inView) {
+    if (inView && !hasCounted) {
+      setHasCounted(true); 
+
       const countUp = (target: number, key: string) => {
         let start = 0;
-        let duration = 2000; 
+        const duration = 2000; 
         const stepTime = Math.abs(Math.floor(duration / target));
 
         const increment = () => {
@@ -36,7 +40,7 @@ function Experience() {
       countUp(6, "services");
       countUp(200, "projects");
     }
-  }, [inView]);
+  }, [inView, hasCounted]); 
 
   return (
     <div
