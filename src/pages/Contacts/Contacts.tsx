@@ -12,13 +12,7 @@ function Contacts() {
   return (
     <>
       <div className="mmd:flex flex-wrap mmd:ml-32 md:ml-20 mx-5 mmd:mt-24 md:mt-24 mt-14 items-center">
-        {/* <motion.div
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -30 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          > */}
+       
         <div className="flex-1">
           <h1 className="text-7xl font-bold">SAY HELLO</h1>
           <p className="mt-3 leading-7 text-gray-700 tracking-wider">

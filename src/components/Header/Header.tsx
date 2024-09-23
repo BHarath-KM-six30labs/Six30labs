@@ -7,10 +7,7 @@ import { IoMdClose } from "react-icons/io";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 import { motion } from "framer-motion";
 
-
 function Header() {
-
-  
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const timeoutRef = useRef<number | null>(null);
@@ -76,13 +73,8 @@ function Header() {
             </span>
           </span>
         </div>
-        <div className=" flex-1 z-50">
-          {/* <motion.div
-            initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            // exit={{ opacity: 0, y: -200 }}
-            transition={{ duration: 0.5 }}
-          > */}
+        <div className={` flex-1 ${window.innerWidth < 800 ? "z-50" : ""}`}>
+          
 
           <motion.div
             initial={{ opacity: 0, y: -20 }}
@@ -91,7 +83,6 @@ function Header() {
               y: isMobileMenuOpen ? 0 : 0,
             }}
             exit={{ opacity: 0, y: -10 }}
-
             transition={{ duration: 0.5 }}
           >
             <ul
@@ -148,68 +139,73 @@ function Header() {
                     //   location.pathname === "/digital_marketing") &&
                     <>
                       {isDropdownOpen && (
-                         <motion.div
-                         initial={{ opacity: 0, y: -10 }}
-                         animate={{
-                           opacity: isMobileMenuOpen || window.innerWidth > 768 ? 1 : 0,
-                           y: isMobileMenuOpen ? 0 : 0,
-                         }}
-                         exit={{ opacity: 0, y: -10 }}
-                         transition={{ duration: 0.5 }}
-                       >
-                        <ul
-                          className={` mmd:absolute md:absolute mt-1  z-20 left-0 md:mt-2 mmd:mt-2 w-48 bg-white md:border mmd:border font-normal md:border-gray-200 md:rounded md:shadow-lg mmd:border-gray-200 mmd:rounded mmd:shadow-lg`}
-                          // onMouseEnter={handleMouseEnter}
-                          // onMouseLeave={handleMouseLeave}
+                        <motion.div
+                          initial={{ opacity: 0, y: -10 }}
+                          animate={{
+                            opacity:
+                              isMobileMenuOpen || window.innerWidth > 768
+                                ? 1
+                                : 0,
+                            y: isMobileMenuOpen ? 0 : 0,
+                          }}
+                          exit={{ opacity: 0, y: -10 }}
+                          transition={{ duration: 0.5 }}
                         >
-                          <Link to="/software_development">
-                            <li
-                              className={`block px-4 md:py-2 mmd:py-2 py-[5px] text-gray-800 hover:bg-gray-100 md:text-[12px] mmd:text-[12px] text-[11px] ${
-                                location.pathname === "/software_development"
-                                  ? "active"
-                                  : ""
-                              }`}
-                            >
-                              Software Development
-                            </li>
-                          </Link>
-                          <Link to="/design&development">
-                            <li
-                              className={`block px-4  md:py-2 mmd:py-2 py-[5px] text-gray-800 hover:bg-gray-100 md:text-[12px] mmd:text-[12px] text-[11px] ${
-                                location.pathname === "/design&development"
-                                  ? "active"
-                                  : ""
-                              }`}
-                            >
-                              Design &amp; Development
-                            </li>
-                          </Link>
-                          <a href="https://bloomlabs.in/" target="_blank">
-                            <li className="block px-4  md:py-2 mmd:py-2 py-[5px] text-gray-800 hover:bg-gray-100 md:text-[12px] mmd:text-[12px] text-[11px]">
-                              Training &amp; Development
-                            </li>
-                          </a>
-                          <Link to="/digital_marketing">
-                            <li
-                              className={`block px-4  md:py-2 mmd:py-2 py-[5px] text-gray-800 hover:bg-gray-100 md:text-[12px] mmd:text-[12px] text-[11px] ${
-                                location.pathname === "/digital_marketing"
-                                  ? "active"
-                                  : ""
-                              }`}
-                            >
-                              Digital Marketing
-                            </li>
-                          </Link>
-                          <Link to="/others">
-                            <li
-                              className={`block px-4  md:py-2 mmd:py-2 py-[5px] text-gray-800 hover:bg-gray-100 md:text-[12px] mmd:text-[12px] text-[11px] ${
-                                location.pathname === "/others" ? "active" : ""
-                              }`}
-                            >
-                              Others
-                            </li>
-                          </Link>
-                        </ul>
+                          <ul
+                            className={` mmd:absolute md:absolute mt-1  z-20 left-0 md:mt-2 mmd:mt-2 w-48 bg-white md:border mmd:border font-normal md:border-gray-200 md:rounded md:shadow-lg mmd:border-gray-200 mmd:rounded mmd:shadow-lg`}
+                            // onMouseEnter={handleMouseEnter}
+                            // onMouseLeave={handleMouseLeave}
+                          >
+                            <Link to="/software_development">
+                              <li
+                                className={`block px-4 md:py-2 mmd:py-2 py-[5px] text-gray-800 hover:bg-gray-100 md:text-[12px] mmd:text-[12px] text-[11px] ${
+                                  location.pathname === "/software_development"
+                                    ? "active"
+                                    : ""
+                                }`}
+                              >
+                                Software Development
+                              </li>
+                            </Link>
+                            <Link to="/design&development">
+                              <li
+                                className={`block px-4  md:py-2 mmd:py-2 py-[5px] text-gray-800 hover:bg-gray-100 md:text-[12px] mmd:text-[12px] text-[11px] ${
+                                  location.pathname === "/design&development"
+                                    ? "active"
+                                    : ""
+                                }`}
+                              >
+                                Design &amp; Development
+                              </li>
+                            </Link>
+                            <a href="https://bloomlabs.in/" target="_blank">
+                              <li className="block px-4  md:py-2 mmd:py-2 py-[5px] text-gray-800 hover:bg-gray-100 md:text-[12px] mmd:text-[12px] text-[11px]">
+                                Training &amp; Development
+                              </li>
+                            </a>
+                            <Link to="/digital_marketing">
+                              <li
+                                className={`block px-4  md:py-2 mmd:py-2 py-[5px] text-gray-800 hover:bg-gray-100 md:text-[12px] mmd:text-[12px] text-[11px] ${
+                                  location.pathname === "/digital_marketing"
+                                    ? "active"
+                                    : ""
+                                }`}
+                              >
+                                Digital Marketing
+                              </li>
+                            </Link>
+                            <Link to="/others">
+                              <li
+                                className={`block px-4  md:py-2 mmd:py-2 py-[5px] text-gray-800 hover:bg-gray-100 md:text-[12px] mmd:text-[12px] text-[11px] ${
+                                  location.pathname === "/others"
+                                    ? "active"
+                                    : ""
+                                }`}
+                              >
+                                Others
+                              </li>
+                            </Link>
+                          </ul>
                         </motion.div>
                       )}
                     </>
