@@ -6,7 +6,11 @@ import Approach from "./Sections/Approach";
 import History from "./Sections/History";
 import ProcessSection from "./Sections/ProcessSection";
 
+
+
 function About() {
+
+ 
   return (
     <>
       <div className="mmd:flex flex-wrap bg-[#f7f7f7]  pb-16">

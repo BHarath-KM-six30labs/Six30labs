@@ -2,6 +2,8 @@
 import { servicesData } from './Sections/Data-sets/services-data';
 
 function Service() {
+
+  
   return (
     <div className='max-w-6xl mx-auto '>
       {servicesData.map((service, index) => (

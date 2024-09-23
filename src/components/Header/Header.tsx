@@ -7,7 +7,10 @@ import { IoMdClose } from "react-icons/io";
 import { FaCaretDown, FaCaretUp } from "react-icons/fa";
 import { motion } from "framer-motion";
 
+
 function Header() {
+
+  
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 
   const timeoutRef = useRef<number | null>(null);
@@ -73,7 +76,7 @@ function Header() {
             </span>
           </span>
         </div>
-        <div className=" flex-1 ">
+        <div className=" flex-1 z-50">
           {/* <motion.div
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -94,7 +97,7 @@ function Header() {
             <ul
               className={`${
                 isMobileMenuOpen
-                  ? "flex flex-col absolute mt-3 z-20 top-[3rem] p-5  left-1/2 transform -translate-x-1/2 bg-white w-full "
+                  ? "flex flex-col absolute mt-3  top-[3rem] p-5  left-1/2 transform -translate-x-1/2 bg-white w-full "
                   : "mmd:flex md:flex hidden"
               } flex justify-between gap-2  md:items-center mmd:items-center pl-10  md:text-sm mmd:text-sm text-[11px] text-gray-800 cursor-pointer  `}
             >
@@ -116,7 +119,7 @@ function Header() {
                   about
                 </li>
               </Link>
-              <div className="relative ">
+              <div className="relative z-50 ">
                 <li
                   className={`relative uppercase cursor-pointer  underline-animation ${
                     location.pathname === "/services" ||
