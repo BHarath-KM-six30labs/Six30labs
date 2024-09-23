@@ -18,7 +18,7 @@ function Experience() {
     if (inView) {
       const countUp = (target: number, key: string) => {
         let start = 0;
-        const duration = 2000; 
+        let duration = 2000; 
         const stepTime = Math.abs(Math.floor(duration / target));
 
         const increment = () => {

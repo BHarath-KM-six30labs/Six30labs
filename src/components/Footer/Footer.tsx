@@ -18,10 +18,21 @@ function Footer() {
         <span className=" text-sm flex gap-3 items-center">
           Follow us on
           <span className="flex gap-3 cursor-pointer">
-            <FaInstagram color="#03B7C9" size={25} />
-            <FaFacebook color="#03B7C9" size={25} />
-            <FaXTwitter color="#03B7C9" size={25} />
-            <FaLinkedin color="#03B7C9" size={25} />
+            <a href="https://www.instagram.com/six30labs/" target="_blank">
+              <FaInstagram color="#03B7C9" size={22} />
+            </a>
+            <a href="https://www.facebook.com/six30labs" target="_blank">
+              <FaFacebook color="#03B7C9" size={22} />
+            </a>
+            <a href="https://twitter.com/six_30L" target="_blank">
+              <FaXTwitter color="#03B7C9" size={22} />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/six-30-labs"
+              target="_blank"
+            >
+              <FaLinkedin color="#03B7C9" size={22} />
+            </a>
           </span>
         </span>
       </div>
